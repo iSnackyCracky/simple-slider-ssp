@@ -83,7 +83,7 @@ jQuery(function ($) {
 
 	});
 
-	$('.delete_slide').live('click', function(e) {
+	$(document).on('click', '.delete_slide', function(e) {
 
 		if( ! confirm( 'Delete slide. Are you sure ?' ) )
 			return false;
@@ -99,7 +99,7 @@ jQuery(function ($) {
 
 	});
 
-	$('.edit_slide').live('click', function() {
+	$(document).on('click', '.edit_slide', function() {
 
 		var edit_form = $('.slide#' + $(this).data('id') + ' .slide_form_mask' );
 		
@@ -178,7 +178,7 @@ jQuery(function ($) {
 
 
 
-	$('.slide_meta td.slide_order').live('mouseover', function() {
+	$(document).on('mouseover', '.slide_meta td.slide_order', function() {
 			
 			var slides = $(this).closest('.slides');
 			
@@ -196,15 +196,15 @@ jQuery(function ($) {
 			});
 	});
 
-	$('.slide_label').live('hover', '.slide_label', function() {
+	$(document).on('mouseenter', '.slide_label', function() {
 		$(this).parent().find('.row_options').show();
 	});
 
-	$('.slide_label').live('mouseleave', function() {
+	$(document).on('mouseleave', '.slide_label', function() {
 		$(this).parent().find('.row_options').hide();
 	});
 
-	$('.add_image').live('click', function() {
+	$(document).on('click', '.add_image', function() {
 
 		var image_input = $(this).parent().find('.slide_image_input');
 		var image_preview = $(this).parent().find('.slide_image_preview img');
@@ -260,14 +260,14 @@ jQuery(function ($) {
 	};
 
 
-	$('.slide_label_input').live('change', function() {
+	$(document).on('change', '.slide_label_input', function() {
 
 		label = $('.slide#' + $(this).data('id') + ' .slide_label strong a' );
 
 		label.text($(this).val());
 	});
 
-	$('.slide_type select').live('change', function() {
+	$(document).on('change', '.slide_type select', function() {
 
 		image = $('.slide#' + $(this).data('id') + ' tr.slide_image' );
 		html = $('.slide#' + $(this).data('id') + ' tr.slide_html' );
