@@ -228,6 +228,9 @@ jQuery(function ($) {
 
 		if ( is_slide_add_image ) {
 
+			// remove [caption]-shortcode returned by send_to_editor when media has description
+			html = html.replaceAll(/\[.*?\]/g, '')
+
 			var image_url = $('img',html).attr('src');
 
 			if ( image_url === undefined  )
